@@ -9,35 +9,18 @@
  */
 
 angular.module('mytodoApp')
-  .controller('ContactCtrl', function ($scope, localStorageService) {
+  .controller('ContactCtrl', function ($scope) {
 
-    var todosInStore = localStorageService.get('todos');
+     $scope.todos = ['Item 1', 'Item 2', 'Item 3'];
 
-    $scope.todos = todosInStore && todosInStore.split('\n') || [];
+    // $scope.addTodoo = function () {
+    //   $scope.todos.push($scope.todo);
+    //   $scope.todo = '';
+    // };
 
-    $scope.todones = ['item 1' , 'item 2', 'item 3'];
-
-    $scope.$watch('todos', function () {
-      localStorageService.add('todos', $scope.todos.join('\n'));
-    }, true);
-
-    $scope.addTodo2 = function () {
-      $scope.todos.push($scope.todo);
-      $scope.todo = '';
-    };
-
-    $scope.completeTodo = function () {
-      $scope.todones.push($scope.todo);
-      $scope.todone = '';
-    };
-
-    $scope.removeTodo = function (index) {
-      $scope.todos.splice(index, 1);
-    };
-
-    $scope.editTodo = function (index) {
-      $scope.todos.splice(index, 1);
-    };
+    // $scope.removeTodo = function (index) {
+    //   $scope.todos.splice(index, 1);
+    // };
 
   });
 

@@ -24,10 +24,10 @@ angular.module('mytodoApp')
     	$scope.formTodoText = '';
   	};
 
-  	 $scope.clearCompleted = function () {
-        $scope.todos = _.filter($scope.todos, function(todo){
-            return !todo.done;
-        });
-    };
+  	 // $scope.clearCompleted = function () {
+    //     $scope.todos = _.filter($scope.todos, function(todo){
+    //         return !todo.done;
+    //     });
+    // };
   
   });
