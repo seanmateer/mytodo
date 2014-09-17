@@ -9,7 +9,7 @@
  */
 
 angular.module('mytodoApp')
-  .controller('MainCtrl', function ($scope, localStorageService) {
+  .controller('ContactCtrl', function ($scope, localStorageService) {
 
     var todosInStore = localStorageService.get('todos');
 
@@ -21,7 +21,7 @@ angular.module('mytodoApp')
       localStorageService.add('todos', $scope.todos.join('\n'));
     }, true);
 
-    $scope.addTodo = function () {
+    $scope.addTodo2 = function () {
       $scope.todos.push($scope.todo);
       $scope.todo = '';
     };

@@ -16,3 +16,8 @@ border: 1px solid #ccc;
 	background-color: white;
 	outline: none !important; 
 }
+
+#todos input.check{
+	background-color: #888;
+	color: white;
+}

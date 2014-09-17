@@ -9,9 +9,25 @@
  */
 angular.module('mytodoApp')
   .controller('AboutCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+
+  	$scope.todos = [
+    	{text:'item 1', done:false},         
+    	{text: 'item 2', done:false}
+  	];
+
+  	$scope.getTotalTodos = function () {
+    	return $scope.todos.length;
+  	};
+
+  	$scope.addTodo = function () {
+    	$scope.todos.push({text:$scope.formTodoText, done:false});
+    	$scope.formTodoText = '';
+  	};
+
+  	 $scope.clearCompleted = function () {
+        $scope.todos = _.filter($scope.todos, function(todo){
+            return !todo.done;
+        });
+    };
+  
   });
